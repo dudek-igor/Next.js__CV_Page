@@ -1,11 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 html,
 body {
-  min-height: 100vh;
+  min-height:200vh;
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
@@ -18,6 +17,12 @@ a {
 
 * {
   box-sizing: border-box;
-}`;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+`;
 
 export default GlobalStyles;

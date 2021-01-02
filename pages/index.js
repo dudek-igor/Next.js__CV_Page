@@ -1,22 +1,23 @@
 import Head from 'next/head';
 import Image from 'next/image';
-
-export default function Home() {
+// Components
+import { Navbar, Header } from 'src/views';
+const Index = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>CV - Igor Dudek</title>
         <link rel='icon' href='/favicon.ico' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap'
+          rel='stylesheet'
+        />
       </Head>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat enim
-      veniam ipsum incidunt odio. Nesciunt minima modi, aperiam quas id iusto
-      velit, delectus quae animi molestiae, ipsa ratione quam eum?
-      {/* <Image
-        src='/my_photo.jpeg'
-        alt='Picture of the author'
-        width={400}
-        height={500}
-      /> */}
-    </div>
+      <Navbar />
+      <Header />
+    </>
   );
-}
+};
+
+export default Index;
