@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
+  background-color: #f2f2f2;
 }
 
 a {

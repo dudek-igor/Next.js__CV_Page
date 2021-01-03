@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 export const NavbarWrapper = styled.nav`
   position: fixed;
@@ -21,12 +22,20 @@ export const StyledList = styled.ul`
 export const StyledListItem = styled.li`
   text-align: center;
   cursor: pointer;
-  padding: 8px 24px;
+  /* Padding add to anchor component */
+  /* padding: 8px 24px; */
   margin: 16px 0;
   position: relative;
   &:last-child {
     margin-right: 48px;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  display: block;
+  padding: 8px 24px;
+  position: relative;
+  font-size: 20px;
   &::after {
     content: '';
     position: absolute;
@@ -36,10 +45,14 @@ export const StyledListItem = styled.li`
     height: 1px;
     background-color: white;
     transform-origin: left 50%;
-    transform: scale(0);
+    transform: scaleX(0);
     transition: transform 300ms ease-in-out;
   }
   &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.active::after {
     transform: scaleX(1);
   }
 `;

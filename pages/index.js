@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 // Components
-import { Navbar, Header } from 'src/views';
+import { UpButton } from 'src/components';
+// Views
+import { Navbar, Header, AboutMe, Skills, Porfolio, Contact } from 'src/views';
 const Index = () => {
   return (
     <>
@@ -16,6 +18,11 @@ const Index = () => {
       </Head>
       <Navbar />
       <Header />
+      <AboutMe />
+      <Skills />
+      <Porfolio />
+      <Contact />
+      <UpButton />
     </>
   );
 };
