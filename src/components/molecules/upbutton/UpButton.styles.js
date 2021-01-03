@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   display: none;
   opacity: 0;
-  transform: translateX(-10px);
+  transform: translateX(10px);
   width: 48px;
   height: 48px;
   border: none;
@@ -17,5 +17,9 @@ export const StyledButton = styled.button`
   svg {
     height: 60%;
     width: 100%;
+  }
+  @media (max-width: 360px) {
+    bottom: 32px;
+    right: 32px;
   }
 `;

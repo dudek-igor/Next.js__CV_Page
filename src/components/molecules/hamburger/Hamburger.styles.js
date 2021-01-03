@@ -9,6 +9,10 @@ export const HamburgerWrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
   }
+  @media (max-width: 360px) {
+    top: 32px;
+    right: 32px;
+  }
 `;
 
 export const StyledBurger = styled.button`

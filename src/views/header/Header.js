@@ -19,9 +19,7 @@
 // } from 'react-icons/si';
 import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
-// Styles
 import { SiLinkedin, SiFacebook, SiGithub } from 'react-icons/si';
-SiLinkedin;
 //Styles
 import {
   StyledHeader,

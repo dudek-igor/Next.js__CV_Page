@@ -8,14 +8,16 @@ import { StyledButton } from './UpButton.styles';
 
 const UpButton = () => {
   const button = useRef();
+
   useEffect(() => {
+    const trigger = document.querySelector('#aboutme');
     gsap.to(button.current, {
       x: 0,
       opacity: 1,
       display: 'block',
       scrollTrigger: {
-        trigger: button.current,
-        start: 'top 30%',
+        trigger: trigger,
+        start: 'top 20%',
         toggleActions: 'play none none reverse none',
       },
     });

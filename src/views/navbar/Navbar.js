@@ -47,6 +47,8 @@ const Navbar = () => {
                 smooth='easeInOutQuint'
                 to={item.to}
                 ignoreCancelEvents={true}
+                // Navbar Height
+                offset={-43}
               >
                 {item.text}
               </StyledLink>
