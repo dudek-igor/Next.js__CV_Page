@@ -1,11 +1,14 @@
-import GlobalStyles from 'styles/GlobalStyles';
+import AppTheme from 'styles/Theme';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 function MyApp({ Component, pageProps }) {
+  // Register Plugin
+  gsap.registerPlugin(ScrollTrigger);
   return (
-    <>
-      <GlobalStyles />
+    <AppTheme>
       <Component {...pageProps} />
-    </>
+    </AppTheme>
   );
 }
 

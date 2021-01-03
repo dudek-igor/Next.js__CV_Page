@@ -4,11 +4,11 @@ const GlobalStyles = createGlobalStyle`
 
 html,
 body {
-  min-height:200vh;
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', 'Helvetica', sans-serif;
-  background-color: #f2f2f2;
+  background-color: ${({ theme }) => theme.bodyColor};
+  color: ${({ theme }) => theme.fontColor};
 }
 
 a {

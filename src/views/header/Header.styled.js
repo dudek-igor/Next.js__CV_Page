@@ -7,23 +7,18 @@ export const StyledHeader = styled.header`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('/images/header_background.jpg');
-  color: white;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
 `;
 export const Content = styled.div`
   width: 100%;
   min-height: 100vh;
   padding-top: 48px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: ${({ theme }) => theme.bodyColor};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media (min-width: 767px) {
-    align-items: flex-end;
-    padding-right: 48px;
-  }
   // All child - For Animations via GSAP
   & > * {
     transform: translateX(-10px);
@@ -56,11 +51,6 @@ export const SocialLinks = styled.ul`
   li {
     width: 48px;
     height: 48px;
-    @media (min-width: 767px) {
-      width: 56px;
-      height: 56px;
-      margin-left: 10vw;
-    }
     a {
       display: block;
       svg {
@@ -68,9 +58,5 @@ export const SocialLinks = styled.ul`
         height: 100%;
       }
     }
-  }
-  @media (min-width: 767px) {
-    width: 50%;
-    justify-content: flex-end;
   }
 `;
