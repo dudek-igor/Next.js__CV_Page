@@ -31,15 +31,15 @@ const Contact = () => {
           validate={(values) => {
             const errors = {};
             // Validate Email
-            if (!values.email) {
-              errors.email = 'Please add valid email';
-            }
-            // Validate Message
-            if (!values.message || values.message.length < 16) {
-              errors.message = 'Message is to short, min 16 characters';
-            } else if (values.message.length > 160) {
-              errors.message = 'Message is to long, max 160 characters';
-            }
+            // if (!values.email) {
+            //   errors.email = 'Please add valid email';
+            // }
+            // // Validate Message
+            // if (!values.message || values.message.length < 16) {
+            //   errors.message = 'Message is to short, min 16 characters';
+            // } else if (values.message.length > 160) {
+            //   errors.message = 'Message is to long, max 160 characters';
+            // }
             return errors;
           }}
           render={({ handleSubmit, form, submitting, pristine }) => (

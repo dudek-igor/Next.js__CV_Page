@@ -10,6 +10,7 @@
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "axios": "^0.21.1",
+    "babel-plugin-styled-components": "^1.12.0",
     "final-form": "^4.20.1",
     "gsap": "^3.5.1",
     "next": "10.0.4",
@@ -21,5 +22,37 @@
     "react-loader-spinner": "^3.1.14",
     "react-scroll": "^1.8.1",
     "styled-components": "^5.2.1"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": false
+            }
+          ]
+        ]
+      }
+    }
   }
 }
