@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 // It's Fake DB, reset after build
 const emails = [];
 
-export default async (req, res) => {
+export default (req, res) => {
   if (emails.includes(req.body.email)) {
     res.json({
       success: false,
@@ -26,13 +26,18 @@ export default async (req, res) => {
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      res.json({
-        success: false,
-        msg: `Something went wrong.`,
-      });
+      res
+        .json({
+          success: false,
+          msg: `Something went wrong.`,
+          error,
+        })
+        .end();
     } else {
       emails.push(req.body.email);
-      res.json({ success: true, msg: `Message Send`, info: info.response });
+      res
+        .status(200)
+        .json({ success: true, msg: `Message Send`, info: info.response });
     }
   });
 };
