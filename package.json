@@ -9,11 +9,16 @@
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^2.0.3",
+    "axios": "^0.21.1",
+    "final-form": "^4.20.1",
     "gsap": "^3.5.1",
     "next": "10.0.4",
+    "nodemailer": "^6.4.17",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-final-form": "^6.5.2",
     "react-icons": "^4.1.0",
+    "react-loader-spinner": "^3.1.14",
     "react-scroll": "^1.8.1",
     "styled-components": "^5.2.1"
   }

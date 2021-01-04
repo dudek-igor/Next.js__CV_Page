@@ -35,12 +35,13 @@ export const StyledListItem = styled.li`
   cursor: pointer;
   /* Padding add to anchor component */
   /* padding: 8px 24px; */
-  margin: ${({ scale }) => (scale ? '4px 0' : '8px 0')};
-  font-size: ${({ scale }) => (scale ? '16px' : '20px')};
+  margin: ${({ scaling }) => (scaling ? '4px 0' : '8px 0')};
+  font-size: ${({ scaling }) => (scaling ? '16px' : '20px')};
   transition: all 250ms ease-in-out;
   position: relative;
 
   @media (max-width: 767px) {
+    width: 100%;
     margin-right: 0px;
     margin: 8px 0;
     font-size: 32px;

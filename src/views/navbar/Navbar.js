@@ -38,7 +38,7 @@ const Navbar = () => {
       <NavbarWrapper>
         <StyledList openMobileMenu={openMobileMenu}>
           {menuItems.map((item) => (
-            <StyledListItem scale={scale} key={item.id}>
+            <StyledListItem scaling={scale} key={item.id}>
               <StyledLink
                 // Close Mobile Menu
                 onClick={() => setOpenMobileMenu(false)}
@@ -48,7 +48,7 @@ const Navbar = () => {
                 to={item.to}
                 ignoreCancelEvents={true}
                 // Navbar Height
-                offset={-43}
+                offset={item.id === 0 ? -43 : 0}
               >
                 {item.text}
               </StyledLink>
