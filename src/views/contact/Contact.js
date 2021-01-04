@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import { Form, Field } from 'react-final-form';
 import Loader from 'react-loader-spinner';
 import axios from 'axios';
+
 // Styles
 import {
   StyledWrapper,
@@ -13,33 +15,57 @@ import {
   ResponseMsg,
 } from './Contact.styled';
 
+// Handle Animation
+const handleAnimation = (element) => {
+  gsap.to(element, {
+    x: 0,
+    opacity: 1,
+    duration: 0.7,
+    scrollTrigger: {
+      trigger: element,
+      start: 'top 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+};
+
+// Main Component
 const Contact = () => {
+  // State
   const [disableSubmit, setDisableSubmit] = useState(false);
   const [responseMsg, setResponseMsg] = useState();
+  // Ref
+  const conntactWrapper = useRef();
+  // Handle Submit
   const onSubmit = async (values) => {
+    setResponseMsg('');
     setDisableSubmit(true);
     const { data } = await axios.post('/api/v1/mail', values);
     setResponseMsg(data);
     setDisableSubmit(false);
   };
+  // Effect after mount
+  useEffect(() => {
+    handleAnimation(conntactWrapper.current);
+  }, []);
   return (
     <StyledWrapper id='contact'>
-      <StyledInnerWrapper>
+      <StyledInnerWrapper ref={conntactWrapper}>
         <h1>Send Me a Message</h1>
         <Form
           onSubmit={onSubmit}
           validate={(values) => {
             const errors = {};
             // Validate Email
-            // if (!values.email) {
-            //   errors.email = 'Please add valid email';
-            // }
-            // // Validate Message
-            // if (!values.message || values.message.length < 16) {
-            //   errors.message = 'Message is to short, min 16 characters';
-            // } else if (values.message.length > 160) {
-            //   errors.message = 'Message is to long, max 160 characters';
-            // }
+            if (!values.email) {
+              errors.email = 'Please add valid email';
+            }
+            // Validate Message
+            if (!values.message || values.message.length < 16) {
+              errors.message = 'Message is to short, min 16 characters';
+            } else if (values.message.length > 160) {
+              errors.message = 'Message is to long, max 160 characters';
+            }
             return errors;
           }}
           render={({ handleSubmit, form, submitting, pristine }) => (

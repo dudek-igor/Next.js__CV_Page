@@ -24,6 +24,9 @@ export const StyledWrapper = styled.section`
   align-items: center;
 `;
 export const StyledInnerWrapper = styled.div`
+  // For GSAP
+  opacity: 0;
+  transform: translateX(-10px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   border-radius: 30px;
   overflow: hidden;
