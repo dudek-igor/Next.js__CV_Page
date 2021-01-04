@@ -23,13 +23,14 @@ const basicInfo = [
 ];
 
 // Handle Animation
-const handleAnimation = (element) => {
-  gsap.to(element, {
+const handleAnimation = (trigger, elements) => {
+  gsap.to(elements, {
     x: 0,
     opacity: 1,
     duration: 0.7,
+    stagger: { each: 0.2 },
     scrollTrigger: {
-      trigger: element,
+      trigger: trigger,
       start: 'top 90%',
     },
   });
@@ -39,9 +40,9 @@ const AboutMe = () => {
   const image = useRef();
   const content = useRef();
   useEffect(() => {
-    const arrayOfConntet = [...content.current.children];
-    arrayOfConntet.forEach((item) => handleAnimation(item));
-    handleAnimation(image.current);
+    const trigger = image.current.parentNode;
+    const aniamteElements = [image.current, ...content.current.children];
+    handleAnimation(trigger, aniamteElements);
   }, []);
   return (
     <StyledWrapper id='aboutme'>

@@ -16,9 +16,9 @@ import {
 } from 'react-icons/si';
 import Loader from 'react-loader-spinner';
 // Styles
-import { StyledWrapper, StyledSVGSkillsWrapper } from './Skills.styled';
+import { StyledWrapper, StyledSkillsWrapper } from './Skills.styled';
 
-const skills = [
+const hardSkills = [
   { id: 0, svg: <SiHtml5 />, text: 'HTML5', color: '#E34F26' },
   { id: 1, svg: <SiCss3 />, text: 'CSS3', color: '#1572B6' },
   { id: 2, svg: <SiSass />, text: 'SASS', color: '#CC6699' },
@@ -35,6 +35,16 @@ const skills = [
     color: '#000000',
   },
 ];
+const softSkills = [
+  { id: 0, text: 'English - B1' },
+  { id: 1, text: 'Reading documentations' },
+  { id: 2, text: 'Skilful usage RWD & Pixel-Perfect' },
+  { id: 3, text: 'Writing highest quality JS code' },
+  { id: 4, text: 'Understanding OOP - DRY, KISS, SOLID...' },
+  { id: 5, text: 'Team-Player - Scrum/Agile' },
+  { id: 6, text: 'Follow trends, Knowledge hungry' },
+  { id: 7, text: '...and much more.' },
+];
 
 const handleAnimation = (elements) => {
   const trigger = elements[0];
@@ -45,35 +55,45 @@ const handleAnimation = (elements) => {
     stagger: { each: 0.2 },
     scrollTrigger: {
       trigger: trigger,
-      start: 'top center',
+      start: 'top 90%',
     },
   });
 };
 
 const Skills = () => {
   // Ref
-  const skillHeader = useRef();
-  const svgSkills = useRef();
+  const hardSkillsRef = useRef();
+  const softSkillsRef = useRef();
   // Effect
   useEffect(() => {
     const animateElements = [
-      skillHeader.current,
-      ...svgSkills.current.children,
+      ...hardSkillsRef.current.children,
+      ...softSkillsRef.current.children,
     ];
     handleAnimation(animateElements);
   }, []);
   return (
     <StyledWrapper id='skills'>
-      <h1 ref={skillHeader}> My Skills</h1>
-      <StyledSVGSkillsWrapper ref={svgSkills}>
-        {skills.map(({ id, svg, text, color }) => (
-          <Skill key={id} svg={svg} text={text} color={color} />
+      {/* Hard Skills */}
+      <StyledSkillsWrapper ref={hardSkillsRef}>
+        <h1>My Skills...</h1>
+        {hardSkills.map(({ id, svg, text, color }) => (
+          <Skill
+            key={id}
+            hardSkill={true}
+            svg={svg}
+            text={text}
+            color={color}
+          />
         ))}
-      </StyledSVGSkillsWrapper>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
-      excepturi, ex architecto natus modi sunt fuga error nostrum laboriosam,
-      saepe qui assumenda rerum culpa laborum. Perferendis repellendus
-      perspiciatis porro sit!
+      </StyledSkillsWrapper>
+      {/* Soft Skills */}
+      <StyledSkillsWrapper ref={softSkillsRef}>
+        <h1>Also...</h1>
+        {softSkills.map(({ id, text }) => (
+          <Skill key={id} text={text} />
+        ))}
+      </StyledSkillsWrapper>
     </StyledWrapper>
   );
 };
