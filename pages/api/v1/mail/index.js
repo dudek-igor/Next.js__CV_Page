@@ -13,7 +13,7 @@ export default async (req, res) => {
     if (emails.includes(email)) {
       res.json({
         success: false,
-        msg: `You already send an email.`,
+        msg: `You already sent an email.`,
       });
       return resolve();
     }

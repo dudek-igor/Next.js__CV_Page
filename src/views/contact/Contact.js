@@ -73,8 +73,8 @@ const Contact = () => {
               <Field name='email'>
                 {({ input, meta }) => (
                   <StyledFiledWrapper>
-                    <label>Email</label>
-                    <input {...input} type='email' placeholder='Your Email' />
+                    <label>Your Email</label>
+                    <input {...input} type='email' placeholder='Email' />
                     {meta.error && meta.touched && <Error>{meta.error}</Error>}
                   </StyledFiledWrapper>
                 )}
@@ -85,7 +85,7 @@ const Contact = () => {
                     <label>Message</label>
                     <textarea
                       {...input}
-                      placeholder='Please Add Your Message'
+                      placeholder='Please Add Your Message Hire'
                     />
                     {meta.error && meta.touched && <Error>{meta.error}</Error>}
                   </StyledFiledWrapper>

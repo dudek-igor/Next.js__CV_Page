@@ -56,6 +56,10 @@ export const SocialLinks = styled.ul`
       svg {
         width: 100%;
         height: 100%;
+        transition: fill 300ms ease-out;
+      }
+      svg:hover {
+        fill: #1877f2;
       }
     }
   }

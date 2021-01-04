@@ -1,22 +1,3 @@
-// import Image from 'next/image';
-// import {
-//   SiHtml5,
-//   SiCss3,
-//   SiSass,
-//   SiGit,
-//   SiJavascript,
-//   SiTypescript,
-//   SiWebpack,
-//   SiEslint,
-//   SiPrettier,
-//   SiReact,
-//   SiRedux,
-//   SiGatsby,
-//   SiNextDotJs,
-//   SiNodeDotJs,
-//   SiMongodb,
-//   SiElectron,
-// } from 'react-icons/si';
 import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
 import { SiLinkedin, SiFacebook, SiGithub } from 'react-icons/si';

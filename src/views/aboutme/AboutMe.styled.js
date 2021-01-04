@@ -16,7 +16,7 @@ export const StyledInnerWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (min-width: 767px) {
+  @media (min-width: 769px) {
     flex-direction: row;
     justify-content: space-evenly;
   }
@@ -28,7 +28,7 @@ export const StyledImageWrapper = styled.div`
   // for GSAP
   transform: translateX(-10px);
   opacity: 0;
-  @media (min-width: 767px) {
+  @media (min-width: 769px) {
     width: 35%;
     & > * {
       box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.4);
@@ -54,7 +54,7 @@ export const InfoWrapper = styled.div`
     transform: translateX(-10px);
     opacity: 0;
   }
-  @media (min-width: 767px) {
+  @media (min-width: 769px) {
     width: 65%;
     & > * {
       // for GSAP
@@ -82,6 +82,12 @@ export const StyledLinkWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  svg {
+    transition: fill 300ms ease-out;
+  }
+  svg:hover {
+    fill: #1877f2;
+  }
 `;
 
 export const StyledLink = styled.a`

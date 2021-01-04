@@ -31,7 +31,6 @@ const handleAnimation = (element) => {
     scrollTrigger: {
       trigger: element,
       start: 'top 90%',
-      toggleActions: 'play none none reverse',
     },
   });
 };
