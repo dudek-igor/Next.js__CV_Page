@@ -51,10 +51,12 @@ export const StyledInnerWrapper = styled.div`
     width: 100%;
     height: 100px;
     padding: 8px;
+    font-size: 16px !important;
   }
   input {
     width: 100%;
     padding: 4px 8px;
+    font-size: 16px !important;
   }
   @media (min-width: 767px) {
     textarea {
