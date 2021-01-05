@@ -4,16 +4,9 @@ const GlobalStyles = createGlobalStyle`
 
 @font-face {
   font-family: "Montserrat";
-  src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
+  src: url("/fonts/Montserrat-Regular.ttf");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/Montserrat/Montserrat-Medium.ttf");
-  font-style: bold;
-  font-weight: 500;
   font-display: swap;
 }
 
