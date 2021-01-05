@@ -1,5 +1,4 @@
-import { getAge } from 'src/utils/getAge';
-import gsap from 'gsap';
+import { getAge, gsapAnimation } from 'src/utils';
 import { useRef, useEffect } from 'react';
 import { SiLinkedin, SiGithub } from 'react-icons/si';
 // Styles
@@ -22,27 +21,13 @@ const basicInfo = [
   { id: 4, info: 'Language', content: 'Polish - Fluent, English - B1' },
 ];
 
-// Handle Animation
-const handleAnimation = (trigger, elements) => {
-  gsap.to(elements, {
-    x: 0,
-    opacity: 1,
-    duration: 0.7,
-    stagger: { each: 0.2 },
-    scrollTrigger: {
-      trigger: trigger,
-      start: 'top 90%',
-    },
-  });
-};
-
 const AboutMe = () => {
   const image = useRef();
   const content = useRef();
   useEffect(() => {
     const trigger = image.current.parentNode;
     const aniamteElements = [image.current, ...content.current.children];
-    handleAnimation(trigger, aniamteElements);
+    gsapAnimation(aniamteElements, trigger);
   }, []);
   return (
     <StyledWrapper id='aboutme'>

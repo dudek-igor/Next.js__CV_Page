@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsapAnimation } from 'src/utils';
 import { Form, Field } from 'react-final-form';
 import Loader from 'react-loader-spinner';
 import axios from 'axios';
@@ -46,7 +46,9 @@ const Contact = () => {
   };
   // Effect after mount
   useEffect(() => {
-    handleAnimation(conntactWrapper.current);
+    const animateElemetns = conntactWrapper.current;
+    const trigger = conntactWrapper.current;
+    gsapAnimation(animateElemetns, trigger, 'play none none reverse');
   }, []);
   return (
     <StyledWrapper id='contact'>

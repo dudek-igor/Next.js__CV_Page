@@ -3,7 +3,14 @@ import Image from 'next/image';
 // Components
 import { UpButton } from 'src/components';
 // Views
-import { Navbar, Header, AboutMe, Skills, Porfolio, Contact } from 'src/views';
+import {
+  Navbar,
+  Header,
+  AboutMe,
+  Skills,
+  Experience,
+  Contact,
+} from 'src/views';
 const Index = () => {
   return (
     <>
@@ -20,7 +27,7 @@ const Index = () => {
       <Header />
       <AboutMe />
       <Skills />
-      <Porfolio />
+      <Experience />
       <Contact />
       <UpButton />
     </>

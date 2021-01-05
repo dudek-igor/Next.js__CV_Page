@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsapAnimation } from 'src/utils';
 // Components
 import { Skill } from 'src/components';
 // Icons
@@ -46,20 +46,6 @@ const softSkills = [
   { id: 7, text: '...and much more.' },
 ];
 
-const handleAnimation = (elements) => {
-  const trigger = elements[0];
-  gsap.to(elements, {
-    x: 0,
-    opacity: 1,
-    duration: 0.8,
-    stagger: { each: 0.2 },
-    scrollTrigger: {
-      trigger: trigger,
-      start: 'top 90%',
-    },
-  });
-};
-
 const Skills = () => {
   // Ref
   const hardSkillsRef = useRef();
@@ -70,7 +56,8 @@ const Skills = () => {
       ...hardSkillsRef.current.children,
       ...softSkillsRef.current.children,
     ];
-    handleAnimation(animateElements);
+    const trigger = animateElements[0];
+    gsapAnimation(animateElements, trigger);
   }, []);
   return (
     <StyledWrapper id='skills'>

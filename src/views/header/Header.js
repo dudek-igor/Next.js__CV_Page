@@ -1,6 +1,6 @@
-import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
 import { SiLinkedin, SiFacebook, SiGithub } from 'react-icons/si';
+import { gsapAnimation } from 'src/utils';
 //Styles
 import {
   StyledHeader,
@@ -10,21 +10,13 @@ import {
   SocialLinks,
 } from './Header.styled';
 
-// Handle Animation
-const handleAnimation = (parentElements) => {
-  const children = [...parentElements.children];
-  gsap.to(children, {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    stagger: { each: 0.3 },
-  });
-};
 // Main Component
 const Header = () => {
   const content = useRef(null);
   useEffect(() => {
-    handleAnimation(content.current);
+    // GSAP Animations
+    const animateElements = [...content.current.children];
+    gsapAnimation(animateElements);
   }, []);
   return (
     <StyledHeader>

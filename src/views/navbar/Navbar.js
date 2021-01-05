@@ -14,7 +14,7 @@ import {
 const menuItems = [
   { id: 0, to: 'aboutme', text: 'About Me' },
   { id: 1, to: 'skills', text: 'Skills' },
-  { id: 2, to: 'portfolio', text: 'Portfolio' },
+  { id: 2, to: 'experience', text: 'Experience' },
   { id: 3, to: 'contact', text: 'Contact' },
 ];
 
