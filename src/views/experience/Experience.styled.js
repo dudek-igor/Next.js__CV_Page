@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledWrapper = styled.section`
   min-height: 100vh;
   padding: 48px 24px;
-  text
   // For GSAP
   & > * {
     opacity: 0;
