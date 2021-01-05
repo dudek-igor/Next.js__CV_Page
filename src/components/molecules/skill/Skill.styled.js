@@ -22,6 +22,9 @@ export const StyledSkillWrapper = styled.div`
       text-align: right;
       &:first-child {
         margin: 0 16px;
+        @media (max-width: 320px) {
+          margin: 0 4px;
+        }
       }
     }
   }
