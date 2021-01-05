@@ -28,6 +28,7 @@ const Experience = () => {
     const animateElements = [...experienceWrapper.current.children];
     const trigger = animateElements[0];
     gsapAnimation(animateElements, trigger);
+    console.log(data);
   }, []);
   return (
     <StyledWrapper id='experience' ref={experienceWrapper}>
@@ -57,7 +58,12 @@ const Experience = () => {
       </StyledEducationWrapper>
       <h2>Check my latest github repos</h2>
       {githubRepos.map((repo) => (
-        <StyledGithubWrapper href='*' key={repo.id}>
+        <StyledGithubWrapper
+          href={repo.html_url}
+          target='_blank'
+          rel='noreferrer noopener'
+          key={repo.id}
+        >
           <span>
             <IoIosArrowUp />
           </span>
