@@ -85,7 +85,7 @@ const Contact = () => {
                     <label>Message</label>
                     <textarea
                       {...input}
-                      placeholder='Please Add Your Message Hire'
+                      placeholder='Please Add Your Message Here'
                     />
                     {meta.error && meta.touched && <Error>{meta.error}</Error>}
                   </StyledFiledWrapper>
