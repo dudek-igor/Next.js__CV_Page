@@ -8,6 +8,9 @@ export const StyledHeader = styled.header`
   background-size: cover;
   background-image: url('/images/header_background.jpg');
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+  @media (max-width: 767px) {
+    background-image: url('/images/header_background-mobile.jpg');
+  }
 `;
 export const Content = styled.div`
   width: 100%;

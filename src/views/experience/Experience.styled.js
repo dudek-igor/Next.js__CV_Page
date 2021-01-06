@@ -77,6 +77,7 @@ export const StyledGithubWrapper = styled.a`
     }
   }
   p {
+    font-size: 16px;
     word-break: break-all;
     text-align: right;
     transition: color 300ms ease-out;
