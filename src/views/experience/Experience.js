@@ -28,7 +28,6 @@ const Experience = () => {
     const animateElements = [...experienceWrapper.current.children];
     const trigger = animateElements[0];
     gsapAnimation(animateElements, trigger);
-    console.log(data);
   }, []);
   return (
     <StyledWrapper id='experience' ref={experienceWrapper}>
